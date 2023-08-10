@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Resume Builder</title>
+</head>
+
+<body>
+  <div class="container" id="cv-form">
+    <h1 class="text-center my-3">Resume Builder</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-center my-3">Personal Information</h3><br>
+
+        <div class="form-group">
+          <label for="nameField">Name</label>
+          <input type="text" id="nameField" placeholder="Enter Your Full Name" class="form-control">
+        </div><br>
+
+        <div class="form-group">
+          <label for="addressField">Address</label>
+          <textarea id="addressField" placeholder="Current Address" class="form-control" rows="3"></textarea>
+        </div><br>
+
+        <div class="form-group">
+          <label for="">Select Your Photo</label>
+          <input id="imgField" type="file" class="form-control">
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="contactField"> Contact Number</label>
+          <input type="text" id="contactField" placeholder="Enter Your Contact Number" class="form-control">
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="emailField">Email</label>
+          <input type="text" id="emailField" placeholder="abc@gmail.com" class="form-control">
+        </div><br>
+
+        <div class="form-group">
+          <label for="linkedinField">LinkedIn</label>
+          <input type="text" id="linkedinField" placeholder="Optional" class="form-control">
+        </div><br>
+
+        <div class="form-group">
+          <label for="githubField">GitHub</label>
+          <input type="text" id="githubField" placeholder="Optional" class="form-control">
+        </div><br>
+
+      </div>
+
+
+      <div class="col-md-6">
+        <h3 class="text-center my-3">Professional Information</h3>
+
+        <div class="form-group mt-5">
+          <label for="">Objective</label>
+          <textarea id="objectiveField" placeholder="Enter Here" class="form-control"></textarea>
+        </div>
+
+
+        <div class="form-group mt-3" id="skills">
+          <label for="">Skills</label>
+          <textarea placeholder="Enter Here" class="form-control skillsField"></textarea>
+
+          <div class="container text-center mt-3" id="skillsAddBtn">
+            <button onclick="addNewskills()" type="button" class="btn btn-dark btn-sm">Add</button>
+          </div>
+        </div>
+
+
+        <div class="form-group mt-2" id="education">
+          <label for="">Education</label>
+          <textarea placeholder="Enter Here" class="form-control educationField"></textarea>
+
+          <div class="container text-center mt-3" id="educationAddBtn">
+            <button onclick="addNewEducation()" type="button" class="btn btn-dark btn-sm">Add</button>
+          </div>
+        </div>
+
+
+        <div class="form-group mt-2" id="project">
+          <label for="">Projects</label>
+          <!-- <input type="text" placeholder="Enter Here" class="form-control projectTitle"><br> -->
+
+          <textarea placeholder="Enter Here" class="form-control projectField" rows="3"></textarea>
+
+          <div class="container text-center mt-3" id="projectAddBtn">
+            <button onclick="addNewProject()" type="button" class="btn btn-dark btn-sm">Add</button>
+          </div>
+        </div>
+
+        <div class="form-group mt-2 ml-20" id="intrest">
+          <label for="">Intrests</label>
+          <input placeholder="Enter Here" class="form-control intrestField">
+
+          <div class="container text-center mt-3" id="intrestAddBtn">
+            <button onclick="addNewIntrest()" type="button" class="btn btn-dark btn-sm">Add</button>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container text-center mt-3">
+        <button onclick="generateCV()" type="button" class="btn btn-success btn-lg">Generate CV</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- cv template -->
+
+  <div class="container" id="cv-template">
+
+    <div class="row">
+      <div class="col-md-3 text-center py-5">
+        <!--first column-->
+        <img src="user profile.jpg" alt="" class="img-fluid myimg" id="imgt"><br>
+
+        <h5 id="namet1" class="mt-3">Mudrani Roy</h5>
+
+        <h5 id="addresst">Beta-1 Greater Noida , Uttar Pradesh- 201310</h5>
+
+        <h5 id="contactt">+91 95xxxxxxxx</h5>
+        <br>
+
+        <p>
+          <a id="emailt" href="#1">mudraniroy@gmail.com</a>
+        </p>
+
+        <p>
+          <a id="linkedint" href="#2">https://www.linkedin.com/in/mudrani-roy-151769229</a>
+        </p>
+
+        <p>
+          <a id="githubt" href="#3">https://github.com/mudraniroy</a>
+        </p>
+        <hr>
+
+        <div class="skill">
+          <h3 style="margin-left: 15px;">Skills</h3>
+          <ul id="skillst">
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </li>
+            <li>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="col-md-9 py-5">
+        <!--second column-->
+        <h1 id="namet2" class="text-center" style="font-weight:900">MUDRANI ROY</h1>
+
+        <!--objective card-->
+
+        <div class="card mt-4">
+          <div class="card-header">
+            <h3>Objective</h3>
+          </div>
+          <div class="card-body">
+            <p id="objectivet">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, libero aut doloribus
+              voluptatem sunt, saepe harum obcaecati deleniti vero dolorem id distinctio modi totam ipsum molestias
+              perferendis vitae eveniet atque!</p>
+          </div>
+        </div>
+
+        <!--Education card-->
+
+        <div class="card mt-4">
+          <div class="card-header background">
+            <h3>Education</h3>
+          </div>
+          <div class="card-body">
+            <ul id="educationt">
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--Projects card-->
+
+        <div class="card mt-4">
+          <div class="card-header background">
+            <h3>Projects</h3>
+          </div>
+          <div class="card-body">
+            <ul id="projectt">
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!--Intrests card-->
+
+        <div class="card mt-4">
+          <div class="card-header background">
+            <h3>Intrests</h3>
+          </div>
+          <div class="card-body">
+            <ul id="intrestt">
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="container mt-3 text-center">
+          <button onclick="printCV()" class="btn-background">Print CV</button>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+  <script src="script.js"></script>
+</body>
+
+</html>

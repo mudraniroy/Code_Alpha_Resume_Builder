@@ -1,0 +1,26 @@
+/* #cv-form{
+    display: none;
+} */
+
+#cv-template{
+    display: none;
+}
+
+.myimg{
+    border: 1px solid black;
+    border-radius: 10%;
+    width: 200px;
+}
+
+.col-md-3{
+    background-color: rgb(150, 184, 195);
+}
+
+.card .card-header{
+    background-color: rgb(150, 184, 195);
+}
+
+.skill{
+    text-align: left;
+}
+
